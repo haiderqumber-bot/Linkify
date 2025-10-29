@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Home — Linkify{% endblock %}
+{% block content %}
+<section class="hero">
+  <h2>Turn plain text URLs into clickable links</h2>
+  <p>Paste text containing links (http, https, or www) and click <strong>Linkify</strong>.</p>
+  <p><a class="btn" href="{{ url_for('linkify') }}">Go to Linkify</a></p>
+</section>
+{% endblock %}
