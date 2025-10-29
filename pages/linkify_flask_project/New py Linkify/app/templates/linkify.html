@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Linkify — Convert Links{% endblock %}
+{% block content %}
+<h2>Linkify</h2>
+<form method="post" action="{{ url_for('linkify') }}">
+  <label for="text">Text to convert:</label>
+  <textarea id="text" name="text" rows="8" placeholder="Paste text with links here...">{{ original }}</textarea>
+  <div class="actions">
+    <button class="btn" type="submit">Linkify</button>
+    <a class="btn ghost" href="{{ url_for('index') }}">Cancel</a>
+  </div>
+</form>
+{% if result %}
+<section class="result">
+  <h3>Result</h3>
+  <div class="output">{{ result }}</div>
+  <p class="hint">You can now copy the linked text.</p>
+</section>
+{% endif %}
+{% endblock %}
